@@ -3,6 +3,8 @@ const fs = require('fs')
 
 const sitemap = new Sitemapper();
 
-sitemap.fetch('https://www.thestandnews.com/sitemap.xml').then(function(sites) {
-  fs.writeFileSync('./sites', sites.sites.join(','), 'utf-8');
+const url = process.argv[2] ? `https://www.thestandnews.com/sitemap/article/${process.argv[2]}.xml` : 'https://www.thestandnews.com/sitemap.xml';
+
+sitemap.fetch(url).then(function(sites) {
+  fs.writeFileSync('./.sites', sites.sites.join(','), 'utf-8');
 });

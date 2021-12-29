@@ -2,7 +2,7 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 let count = parseInt(fs.readFileSync('./count','utf-8'));
 
-const sites = fs.readFileSync('./sites', 'utf-8').split(',').slice(count);
+const sites = fs.readFileSync('./.sites', 'utf-8').split(',').slice(count);
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
