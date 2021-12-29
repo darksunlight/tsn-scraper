@@ -8,3 +8,4 @@ const url = process.argv[2] ? `https://www.thestandnews.com/sitemap/article/${pr
 sitemap.fetch(url).then(function(sites) {
   fs.writeFileSync('./.sites', sites.sites.join(','), 'utf-8');
 });
+fs.writeFileSync('./count', '0', 'utf-8');
